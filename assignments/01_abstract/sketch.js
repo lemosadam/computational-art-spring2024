@@ -8,9 +8,9 @@ function setup() {
   noStroke();
   let x = -5;
   let y = 5;
-  // Create an array of Dot objects (see the class below)
+ 
   for (let i = 0; i < numDots; i++) {
-    // Make use of the iterator variable (i) to compute the x position of the dot
+    
     x = x + 10;
     
     if (x >= width)
@@ -50,18 +50,21 @@ class Dot {
 
     this.diameter = 5;
 
-    this.hue = (0)
+    this.hue = 255;
+    
 
-    if (this.id > 2400)
-    {
-      this.hue = 180;
-    }
+  
   }
 
   // This is the function that is called in the draw function above.
   update() {
   
-
+ this.hue = this.id % mouseX;
+ if (this.hue > 360)
+ {
+     this.hue = 0
+ }
+   
     fill(this.hue, 50, 100);
     ellipse(this.position.x, this.position.y, this.diameter, this.diameter);
   }
