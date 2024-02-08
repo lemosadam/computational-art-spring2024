@@ -1,11 +1,13 @@
 let dots = [];
-let numDots = 2500;
+let numDots = 700;
 
 // p5 calls this function right away when the webpage is loaded
 function setup() {
+  
   frameRate(120);
-  createCanvas(500, 500);
+  createCanvas(250, 250);
   colorMode(HSB);
+  
   noStroke();
   let x = -5;
   let y = 5;
@@ -53,7 +55,7 @@ class Dot {
 
     this.hue = 255;
     
-
+    
   
   }
 
@@ -62,27 +64,33 @@ class Dot {
   
  //this.hue = this.id % mouseX;
 
-
+ fill(this.hue, 50, 0);
 
  for (let i = 0; i < dots.length; i++) {
-   this.hue = 360;
+  
+  this.hue = 360;
   
   let distance = dist(this.position.x, this.position.y, mouseX, mouseY);
 
-   if (distance < 200)
+  distance = distance * noise(.1 * frameCount);
+
+   if (distance < 10)
    {
-  this.hue = map(distance, 0, width/2, 0, 360);
-  this.hue = this.hue * noise(.005 * this.id);
+    
+  
+  this.hue = map(this.hue, 1, 360, 0, 360);
+  this.hue = this.hue * noise(.1 *frameCount);
+  fill(this.hue, 50, 100);
   }
 }
 
    
  if (this.hue > 360)
  {
-     this.hue = 0
+     this.hue = random(1, 360)
  }
    
-    fill(this.hue, 50, 100);
+    
     ellipse(this.position.x, this.position.y, this.diameter, this.diameter);
   }
 }
