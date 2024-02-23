@@ -4,7 +4,7 @@ class Star {
     this.x = x;
 	this.y = y;
 	this.size = size;
-    this.hue = (0, 0, 100);
+    this.hue = (random(1, 255), random(1, 255), 50);
 
     }
 
@@ -12,7 +12,7 @@ class Star {
         push();
 
         noStroke();
-        fill(this.hue);
+        fill((random(1, 255), random(1, 255), 50));
         rect(this.x, this.y, this.size);
 
         pop();

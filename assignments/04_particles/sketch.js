@@ -1,5 +1,6 @@
 
 let stars = [];
+let fireworks = [];
 
 function setup() {
   createCanvas(600, 400);
@@ -14,6 +15,13 @@ function setup() {
 	let y = random(height);
 	let s = random(1, 3);
 	stars.push(new Star(x, y, s));
+  }
+
+  //create fireworks
+  for (let i = 0; i < 10; i++) {
+	  let x = random(width);
+	  let y = height;
+	  fireworks.push(new firework(x, y));
   }
   
 }
@@ -32,6 +40,10 @@ function draw() {
 
   for (let i = 0; i < stars.length; i++) {
 	stars[i].show()
+  }
+
+    for (let i = 0; i < fireworks.length; i++) {
+	fireworks[i].show()
   }
 
  }
