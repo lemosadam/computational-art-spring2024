@@ -7,7 +7,7 @@ class firework {
 
         this.boomHeight = random((height/2 - 100), (height / 2 + 100));
         this.size = random(1, 3);
-        this.speed = random(-1, -2);
+        this.speed = -5;
 
         this.hue = random(360);
     }
@@ -19,9 +19,9 @@ class firework {
         } else {
             // Draw the particle system point when it isn't active (to sort of look like a firework)
             // Below is a bunch of me just messing around with position and size.
-            this.pos.x += map(noise((frameCount + this.boomHeight)/50), 0, 1, -2, 2);
+            //this.pos.x += map(noise((frameCount + this.boomHeight)/50), 0, 1, -2, 2);
             this.pos.y += this.speed;
-            let r = map(this.pos.y, height, this.boomHeight, this.radius, this.radius/10);
+           
             fill(0, 0, 0, map(this.pos.y, height, this.boomHeight, 1, 0.5));
             noStroke();
             rect(this.pos.x, this.pos.y, this.size);
@@ -45,4 +45,15 @@ class firework {
             }
         }
     }
+
+    show(){
+        push();
+
+        noStroke();
+        fill(this.hue);
+        rect(this.pos.x, this.pos.y, this.size);
+
+        pop();
+    }
 }
+
