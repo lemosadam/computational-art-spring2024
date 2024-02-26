@@ -1,16 +1,16 @@
-class Particle {
+class shimmerparticle {
     constructor(x, y) {
         this.pos = createVector(x, y);
-        this.vel = createVector(random(-2, 2), random(-1, 1));
+        this.vel = createVector(random(-2, 2), random(-1, 5));
         this.acc = createVector(0, 0);
 
-        this.hue = color(random(1, 360), 50, 75);
+        this.hue = color(50, 100, 100);
 
-        this.mass = random(10, 20);
+        this.mass = random(30, 50);
 
         this.size = random(1, 3);
 
-        this.lifetime = 50;
+        this.lifetime = 100;
     }
 
 
@@ -68,4 +68,4 @@ class Particle {
 
         pop();
     }
-}
+}// JavaScript source code

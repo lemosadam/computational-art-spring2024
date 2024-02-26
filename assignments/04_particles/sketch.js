@@ -5,6 +5,8 @@ let spawntimer = 0;
 let spawnrate = .05;
 let numFireworks = 5;
 let gravity;
+let shimmerfireworks = [];
+let shimmertimer = 0;
 
 function setup() {
   createCanvas(600, 400);
@@ -28,6 +30,8 @@ function setup() {
 	  let y = height;
 	  fireworks.push(new firework(x, y));
   }
+
+ 
   
 }
 
@@ -44,17 +48,27 @@ function draw() {
   rect(width/2, height+150, width, height);
   
   spawntimer += deltaTime * 0.001;
-  print(spawntimer);
+	shimmertimer += deltaTime * 0.001;
+  
   if ( spawntimer > 2)
   {
-	  
-	  let x = random(width);
+	  let x = random(1, width);
 	 let y = height;
-	 rect(100, width/2, height /2);
+	 
 	  fireworks.push(new firework(x, y));
 
 	  spawntimer = 0;
+  }
 
+   if ( shimmertimer > 5)
+  {
+	  
+	  console.log("shimmer")
+	  let x = random(width);
+	 let y = height;
+	 
+	  shimmerfireworks.push(new shimmerfirework(x, y));
+	  shimmertimer = 0;
 	  
   }
 
@@ -64,7 +78,19 @@ function draw() {
 
     for (let i = 0; i < fireworks.length; i++) {
 	fireworks[i].update();
-  }
+	if(this.lifetime <= 0)
+	{
+		fireworks.splice(i, 1)
+	}
+	}
+
+    for (let i = 0; i < shimmerfireworks.length; i++) {
+	shimmerfireworks[i].update();
+	if(this.lifetime <= 0)
+	{
+		shimmerfireworks = [];
+	}
+	}
 
 
  }
