@@ -3,6 +3,8 @@ let stars = [];
 let fireworks = [];
 let spawntimer = 0;
 let spawnrate = .05;
+let numFireworks = 5;
+let gravity;
 
 function setup() {
   createCanvas(600, 400);
@@ -11,6 +13,7 @@ function setup() {
   background(0, 0, 100);
   rectMode(CENTER);
 
+  gravity = createVector(0, 0.1);
   //create stars
   for (let i = 0; i < 100; i++) {
 	let x = random(width);
@@ -42,10 +45,9 @@ function draw() {
   
   spawntimer += deltaTime * 0.001;
   print(spawntimer);
-  if ( spawntimer > 5)
+  if ( spawntimer > 2)
   {
 	  
-	  print("firework spawned");
 	  let x = random(width);
 	 let y = height;
 	 rect(100, width/2, height /2);
@@ -61,7 +63,7 @@ function draw() {
   }
 
     for (let i = 0; i < fireworks.length; i++) {
-	fireworks[i].show()
+	fireworks[i].update();
   }
 
 

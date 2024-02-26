@@ -1,17 +1,17 @@
 class Particle {
-    constructor(x, y, h) {
+    constructor(x, y) {
         this.pos = createVector(x, y);
         this.vel = createVector(random(-2, 2), random(-1, 1));
         this.acc = createVector(0, 0);
 
-        this.hue = (h + random(20)) % 360;
+        this.hue = color(random(1, 360), 50, 75);
 
-        this.mass = random(1, 5);
+        this.mass = random(10, 20);
 
         // Make the radius have something to do with the mass.
-        this.size = 1;
+        this.size = random(1, 3);
 
-        this.lifetime = random(50, 400);
+        this.lifetime = 50;
     }
 
 
@@ -31,11 +31,11 @@ class Particle {
 
     update() {
         this.lifetime--;
-        if (this.lifetime < 0) {
+        if (this.lifetime =< 0) {
             this.destroy = true;
         }
 
-        this.radius -= 0.1;
+        
 
         // FORCES
         this.addForce(gravity);
