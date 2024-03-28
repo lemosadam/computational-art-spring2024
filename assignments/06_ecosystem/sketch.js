@@ -69,7 +69,7 @@ function draw() {
   for (let fish of fishies){
     fish.update();
     fish.draw();
-    fish.wrap();
+    
   }
 
   for (let bubble of bubbles){
