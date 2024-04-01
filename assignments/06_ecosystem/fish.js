@@ -208,8 +208,14 @@ show() {
    
     stroke(0, 0, 0)
     strokeWeight(1)
+    fill(this.hue-20, this.saturation-20, this.brightness)
     triangle(0, 0, -10, -10, -10, 10)
+
+    fill(this.hue, this.saturation, this.brightness);
     ellipse(0, 0, 15);
+
+    fill(this.hue-20, this.saturation-20, this.brightness)
+    ellipse(-3, -3, 5)
     
     
     // beginShape();
