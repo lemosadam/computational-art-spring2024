@@ -32,11 +32,12 @@ branch(l) {
   } 
 }
 
-draw() {
-  
+show() {
+  push();
   resetMatrix();
   count = 0;
   translate(this.coralX, height);
   this.branch(this.coralSize);
+  pop();
 }
 }

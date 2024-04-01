@@ -167,7 +167,7 @@ update() {
     this.acc.set(0,0);
 }
 
-draw() {
+show() {
     push();
 
     

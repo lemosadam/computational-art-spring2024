@@ -15,7 +15,7 @@ this.pos.x += map(noise(frameCount), 0, 1, -2, 2);
 this.pos.y += this.speed;
 }
 
-draw(){
+show(){
 noStroke();
 fill(this.hue);
 

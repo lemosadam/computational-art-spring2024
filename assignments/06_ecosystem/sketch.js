@@ -31,10 +31,16 @@ function setup() {
 
   for (let i = 1; i < numFishies; i++)
   {
-    x = random(1, width)
-    y = random(1, height)
+    x = map(i, 1, numFishies, 0, width);
+    y = height/2;
     let fishHue = random(1, 360)
-    fishies.push(new Fish(random(width), random(height), target, fishies, fishHue));
+    fishies.push(new Fish(x, y, target, fishies, fishHue));
+    
+  }
+
+  for (fish of fishies)
+  {
+    console.log(fish.pos)
   }
 
   for (let i = 0; i < 10; i++) {
@@ -63,18 +69,19 @@ function draw() {
   target.x = mouseX; 
   target.y = mouseY;
   for (let coral of coralGroup)(
-    coral.draw()
+    coral.show()
   )
 
+  console.log(fishies.length);
   for (let fish of fishies){
     fish.update();
-    fish.draw();
+    fish.show();
     
   }
 
   for (let bubble of bubbles){
     bubble.update();
-    bubble.draw();
+    bubble.show();
   }
 
   spawntimer += deltaTime * 0.001;
