@@ -1,4 +1,4 @@
-class Fish{ 
+class Shark{ 
     
     constructor(x, y, target, fishies, fishHue) {
     // For more detailed comments on how pos, vel, acc, and addForce work
@@ -9,7 +9,7 @@ class Fish{
     this.acc = createVector(0, 0);
 
     this.target = target;
-    this.maxSpeed = 5;
+    this.maxSpeed = 2;
     this.maxForce = 0.05;
 
     this.dim = 0 + random(5);
@@ -18,13 +18,13 @@ class Fish{
     this.saturation = 70;
     this.brightness = 80;
 
-    this.range = 100;
+    this.range = 200;
 
     this.mass = 1;
 
     this.fishies = fishies;
 
-    this.tag = "fishy";
+    this.tag = "shark";
 
     
 
@@ -136,6 +136,7 @@ alignment(closeVehicles) {
 }
 
 update() {
+    
     if (mouseIsPressed) {
         let mousePos = createVector(mouseX, mouseY);
         this.seek(mousePos);
@@ -143,27 +144,28 @@ update() {
         let closeVehicles = this.getCloseVehicles();
         // What actions is this agent pursuing?
         let cohesionForce = this.cohesion(closeVehicles);
-
-        cohesionForce.mult(1);
+        cohesionForce.mult(.8);
         this.addForce(cohesionForce);
 
         let separationForce = this.separation(closeVehicles);
         for (let vehicle of closeVehicles) {
-            if (vehicle instanceof Shark) {
+            if (vehicle instanceof Shark && vehicle !== this) {
+                
+                //console.log("shark detected");
                 let separationForce = this.separation([vehicle]);
-                console.log("shark detected");
-                this.maxSpeed = 8;
-                separationForce.mult(10);
+                this.maxSpeed = 3;
+                separationForce.mult(5);
                 this.addForce(separationForce);
-              
+               
+                
             } else {
-                this.maxSpeed = 2;
+                this.maxSpeed = 3;
                 separationForce.mult(.4);
                 this.addForce(separationForce);
-             
+                
             }
         }
-        //separationForce.mult(.6);
+        //separationForce.mult(.1);
         //this.addForce(separationForce);
 
         let alignmentForce = this.alignment(closeVehicles);
@@ -203,13 +205,13 @@ show() {
     let angle = this.vel.heading();
     rotate(angle);
 
-    fill(this.hue, this.saturation, this.brightness);
+    fill(this.hue, this.saturation, 10);
 
    
     stroke(0, 0, 0)
     strokeWeight(1)
-    triangle(0, 0, -10, -10, -10, 10)
-    ellipse(0, 0, 15);
+    triangle(0, 0, -40, -40, -40, 40)
+    ellipse(0, 0, 50);
     
     
     // beginShape();
