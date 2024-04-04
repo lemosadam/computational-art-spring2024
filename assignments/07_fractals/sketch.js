@@ -59,10 +59,10 @@ function drawStars(x, y, radius1, radius2, npoints) {
   stroke(0, 0, h);
 
   if (count % 2 === 0) {
- 
-
     star(x, y, radius1, radius2, npoints); 
+  } 
 
+  if (count % 4 === 0){
     let angle = TWO_PI / npoints;
     for (let a = 0; a < TWO_PI; a += angle) {
       let sx = x + cos(a) * radius1;
@@ -72,7 +72,7 @@ function drawStars(x, y, radius1, radius2, npoints) {
       ellipse(sx, sy, 10);
       ellipse(sx, sy, 5) 
     }
-  } 
+  }
 
   if (npoints < 100) {
     drawStars(x, y, radius1/1.1, radius2/1.1, npoints + 1);
