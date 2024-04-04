@@ -70,6 +70,7 @@ function drawStars(x, y, radius1, radius2, npoints) {
 
       fill(f, 80, 100)
       ellipse(sx, sy, 10);
+      fill(0,0,0)
       ellipse(sx, sy, 5) 
     }
   }
