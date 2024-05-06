@@ -2,22 +2,24 @@ class Particle {
 
     //particle code pulled from my particle project and then tweaked
     constructor(x, y, teamColor) {
-        this.pos = createVector(x, y);
+        this.pos = createVector(x,y)
         this.vel = createVector(random(-2, 2), random(-1, 1));
         this.acc = createVector(0, 0);
         this.gravity = createVector(0,1)
 
         if(teamColor == "blue"){
-            this.fill = 240
+            this.hue = 240
         } else {
-            this.fill = 0
+            this.hue = 0
         }
 
         this.mass = random(10, 20);
 
-        this.size = random(4, 6);
+        this.size = random(6, 10);
 
         this.lifetime = 50;
+        ellipse(x,y, this.size)
+     
     }
 
 
@@ -34,30 +36,30 @@ class Particle {
         this.addForce(drag);
     }
 
-    update() {
+    update(){
+        
         this.lifetime--;
         if (this.lifetime <= 0) {
             this.destroy = true;
         }
-
+        
         this.addForce(this.gravity);
+        this.addDrag()
         this.vel.add(this.acc); 
         this.vel.limit(5); 
         this.pos.add(this.vel); 
 
         this.acc.mult(0);
-        console.log(this.pos)
+        
     }
 
     draw() {
         push();
 
-        noStroke();
-
         translate(this.pos.x, this.pos.y);
-        imageMode(CENTER);
-        fill(this.fill, 80, 50);
-        ellipse(0, 0, this.size);
+        
+        fill(this.hue, 80, 50);
+        circle(0, 0, this.size);
 
         pop();
     }

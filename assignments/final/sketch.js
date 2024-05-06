@@ -73,7 +73,7 @@ function setup() {
   
   colorMode(HSB)
   push();
-  background(0, 0, 100)
+  //background(0, 0, 100)
   
   for (let x = 0; x < width; x += grassTile.width) { 
     for (let y = 0; y < height; y += grassTile.height) { 
@@ -111,7 +111,7 @@ decorativeBoulder.img = barrierIMG;
 decorativeBoulder.x = 120
 decorativeBoulder.y = height - 100;
 
-text(gold, 50, 100);
+
 pop();
   
 
@@ -128,7 +128,7 @@ pop();
 
   state_1 = new state1();
   state_2 = new state2();
-  state_3 = new state3();
+  state_3 = new state3(particles);
   state_4 = new state4();
 
   currentState = state_1;
@@ -149,6 +149,8 @@ pop();
   userStartAudio();
   bassLoop.start();
   melodyLoop.start();
+
+  ellipse(width/2, height/2, 100)
 }
 
 function spawnSoldier() {
@@ -159,7 +161,7 @@ function spawnEnemySoldier(){
   enemyUnits.push(new Soldier(100, height/2, 64, 64, "red", 30, coresArray[0], playerUnits))
 }
 function draw() {
-goldRibbon.text = gold + "GP";
+  goldRibbon.text = gold + "GP";
  currentState.draw();
  
  for (let display of UIDisplays){
@@ -178,9 +180,12 @@ for (let cores of coresArray){
   cores.update();
 }
 
-   push();
-        background(0, 0, 100)
 
+
+   push();
+        //background(0, 0, 100)
+
+        ellipse(width/2, height/2, 100)
         for (let x = 0; x < width; x += grassTile.width) { 
           for (let y = 0; y < height; y += grassTile.height) { 
               image(grassTile, x, y); 
@@ -191,9 +196,13 @@ for (let cores of coresArray){
 if (keyIsPressed === true){
   if (keyCode === BACKSPACE)
   {
-      
+      console.log(particles.length)
   }
 }
+
+let ellipsex = 50
+      ellipsex++;
+        ellipse(ellipsex, height/2, 100)
 }
 
 // function mousePressed(){

@@ -28,14 +28,14 @@ update() {
   //console.log(this.hp)
  
 
-  // if (this.hp <= 0){
-  //   if (this.teamColor == "blue"){
-  //     textToDisplay = "You Lose!";
-  //     currentState = state_4;}
-  //     else {textToDisplay = "You Win!"
-  //     currentState = state_4;}
+  if (this.hp <= 0){
+    if (this.teamColor == "blue"){
+      textToDisplay = "You Lose!";
+      currentState = state_4;}
+      else {textToDisplay = "You Win!"
+      currentState = state_4;}
 
-  // }
+  }
 
   
 }

@@ -21,9 +21,9 @@ class state2{
             startOfPlayerTurn = false;
             this.startOfTurn()
         }
-
+        circle(width/2, height/2, 10)
         push();
-        background(0, 0, 100)
+        //background(0, 0, 100)
 
         for (let x = 0; x < width; x += grassTile.width) {
           for (let y = 0; y < height; y += grassTile.height) { 
@@ -31,16 +31,17 @@ class state2{
           }
       }
       
-    
+      circle(width/2, height/2, 10)
       pop();
         
         // if (this.startOfPlayerTurn == true){
         //     this.startOfTurn();
         // }
         
-
-
-        
+      let ellipsex = 50
+      ellipsex++;
+        ellipse(ellipsex, height/2, 100)
+        console.log("drawing ellipse")
 
 
     }
