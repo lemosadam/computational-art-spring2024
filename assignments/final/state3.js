@@ -71,8 +71,7 @@ class state3{
 
         for (let particle of particles){
             particle.update();
-            particle.draw()
-
+            particle.draw();
           }
 
           for (let p = particles.length - 1; p >= 0; p--) {
