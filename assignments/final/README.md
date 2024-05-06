@@ -1,5 +1,5 @@
-**TITLE:** Pixel Gauntlet
-**LINK:** lemosadam.github.io/computational-art-spring2024/assignments/final
+**TITLE:** Pixel Gauntlet <br>
+**LINK:** lemosadam.github.io/computational-art-spring2024/assignments/final <br>
 **FIVE INTERCONNECTED ASPECTS:** 
 1. Created a state machine to control flow of gameplay
 2. Implemented a money mechanic where killing enemies or grabbing gold funds your army
