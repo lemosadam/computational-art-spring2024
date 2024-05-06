@@ -1,37 +1,43 @@
 class Core {
 
-constructor(x, y, teamColor, size, spriteName){
+constructor(x, y, teamColor, size, spriteIMG){
     
+
+  
+
+  this.sprite = new Sprite();
   this.teamColor = teamColor;
-  this.x = x;
-  this.y = y;
-  this.size = size
-  this.spriteName = spriteName;
 
+  
+  this.sprite.x = x;
+  this.sprite.y = y;
+  this.sprite.diameter = size;
+  this.sprite.color = teamColor;
+  this.sprite.collider = 'static';
 
-  this.spriteName = new Sprite();
-  this.spriteName.x = this.x;
-  this.spriteName.y = this.y;
-  this.spriteName.diameter = this.size;
-  this.spriteName.color = this.teamColor;
-  this.spriteName.collider = 'static';
+  this.hp = 30;
+  if (this.teamColor == "blue"){
+    this.sprite.img = blueCastle;}
+    else {this.sprite.img = redCastle}
 
-  this.HP = 50;
-
+  //this.sprite.scale = .5
 }
 
-show() {
-    
-    
-    // push();
-
-    
-   
-    // fill(this.teamColor, 100, 100)
-    // ellipse(this.x, this.y, this.size);
+update() {
+  //this.sprite.debug = mouse.pressing();
+  //console.log(this.hp)
  
 
-    // pop();
+  if (this.hp <= 0){
+    if (this.teamColor == "blue"){
+      textToDisplay = "You Lose!";
+      currentState = state_4;}
+      else {textToDisplay = "You Win!"
+      currentState = state_4;}
+
+  }
+
+  
 }
 
 }

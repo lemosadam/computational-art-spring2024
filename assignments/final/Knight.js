@@ -1,7 +1,4 @@
-class Soldier{
-
-    
-
+class Knight{
     constructor(chosenLane, w, h, teamColor, hp, enemyCore, oppositeTeam){
 
    
@@ -17,12 +14,12 @@ class Soldier{
         //this.sprite.scale 
         this.sprite.teamColor = teamColor;
         
-        this.hp = hp;
+        this.hp = 100;
         this.enemyUnits = oppositeTeam;
         this.enemyCore = enemyCore;
         if (this.sprite.teamColor == "blue"){
-            this.sprite.img = pawnWalkGIF;}
-            else {this.sprite.img = redWalkGIF}
+            this.sprite.img = knightWalkIMG;}
+            else {this.sprite.img = redKnightWalkIMG}
         
           //this.sprite.scale = .5
         
@@ -36,13 +33,13 @@ class Soldier{
     this.timeSinceLastSoundPlayed++;
     if (this.timeSinceLastCollision > 5){
         if (this.sprite.teamColor == "blue"){
-            this.sprite.img = pawnWalkGIF;}
-            else {this.sprite.img = redWalkGIF}
+            this.sprite.img = knightWalkIMG;}
+            else {this.sprite.img = redKnightWalkIMG}
     }
 
-    //this.sprite.debug = mouse.pressing();
+    this.sprite.debug = mouse.pressing();
     this.target = createVector(this.enemyCore.sprite.x, this.enemyCore.sprite.y)
-    this.sprite.moveTowards(this.target, 0.0025);
+    this.sprite.moveTowards(this.target, 0.002);
     //console.log(enemyUnits)
 
     
@@ -56,16 +53,16 @@ class Soldier{
 
     if (this.sprite.collides(this.enemyCore.sprite)) {
         this.hp = 0;
-        this.enemyCore.hp = this.enemyCore.hp - 1;
+        this.enemyCore.hp = this.enemyCore.hp - 2;
         if (this.sprite.teamColor == "red"){
-            gold = gold - 1;
+            gold = gold - 3;
             deathSample.play();
         } else{
             powerUpSample.play();
         }
      }
 
-     //got chatGPT help here with referencing the entire array of enemyUnits which helped me realize you could pass the entire array in via the constructor. was gettin an undefined error prior
+     //got chatGPT help here with just referencing the entire array of enemyUnits which helped me realize you could pass the entire array in via the constructor
      for (let units of this.enemyUnits) {
         if (this.sprite.collides(units.sprite)) {
             if(this.timeSinceLastSoundPlayed > 50)
@@ -76,11 +73,11 @@ class Soldier{
             
 
           if (this.sprite.teamColor == "blue"){
-            this.sprite.img = pawnAttackGIF;
+            this.sprite.img = KnightAttackIMG;
             }
             else {
                 
-                this.sprite.img = redAttackGIF}
+                this.sprite.img = redKnightAttackIMG}
           
         }
      }
