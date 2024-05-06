@@ -7,7 +7,7 @@
 4. Careful tagging of Red or Blue team means the same base character classes could be used for both teams, which allowed for more streamlined code
 5. With borrowed sound assets but generated music, I'm trying to go for a cohesive, classic arcade sound design.<br>
 **MULTIMEDIA:**
-1. The use of publicly available pixel art assets
-2. GIFs used as character animations
-3. Generated sound as well as sound effects.
+- The use of publicly available pixel art assets
+- GIFs used as character animations
+- Generated sound as well as sound effects.
 <br>**ALLOWED TO PUBLICLY SHARE?:** Yes
