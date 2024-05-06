@@ -36,13 +36,13 @@ let particles = [];
 
 function preload(){
   pawnWalkGIF = loadImage("./images/pawnWalkGIF.gif");
-  redWalkGIF = loadImage("./images/redWalkGIF.gif");
+  redWalkGIF = loadImage("./images/redWalkGif.gif");
   pawnAttackGIF = loadImage("./images/pawnAttackGIF.gif");
-  redAttackGIF = loadImage("./images/redAttackGIF.gif");
+  redAttackGIF = loadImage("./images/RedAttackGif.gif");
   blueCastle = loadImage("./images/Castle_Blue.png");
   redCastle = loadImage("./images/Castle_Red.png");
   grassTile = loadImage("./images/GrassTile.png");
-  barrierIMG = loadImage("./images/rockImg.png");
+  barrierIMG = loadImage("./images/RockImg.png");
   bannerIMG = loadImage("./images/banner.png");
   goldSackIMG = loadImage("./images/G_Idle.png");
   yellowBanner = loadImage("./images/yellowRibbon.png");
