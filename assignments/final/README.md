@@ -1,4 +1,4 @@
-**TITLE:** Pixel Gauntlet 
+**TITLE:** Pixelart Gauntlet
 <br>**LINK:** lemosadam.github.io/computational-art-spring2024/assignments/final 
 <br>**FIVE INTERCONNECTED ASPECTS:** 
 1. Created a state machine to control flow of gameplay
