@@ -36,7 +36,7 @@ let particles = [];
 
 function preload(){
   pawnWalkGIF = loadImage("./images/pawnWalkGIF.gif");
-  redWalkGIF = loadImage("./images/redWalkGif.gif");
+  redWalkGIF = loadImage("./images/redWalkGIF.gif");
   pawnAttackGIF = loadImage("./images/pawnAttackGIF.gif");
   redAttackGIF = loadImage("./images/RedAttackGif.gif");
   blueCastle = loadImage("./images/Castle_Blue.png");
